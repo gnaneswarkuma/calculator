@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>*
+        {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            
+        }
+        .cont
+        {
+            width: 100%;
+            height: 100vh;
+            background-color: #042a34;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:-8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        .calculator
+        {
+            background-color:black;
+            padding: 20px;
+            box-shadow:-8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+        }
+        .calculator form input{
+            border: 0;
+            margin: 10px;
+            outline: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            font-size:x-large;
+            box-shadow:-8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(255, 255, 255, 0.2);
+            background:transparent;
+            color: white;
+            cursor: pointer;
+            
+        }
+        form .dis{
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px 0;
+        }
+        form .dis input{
+            text-align: right;
+            flex:content;
+            font-size: 45px;
+            box-shadow: none;
+        }
+        form .dis input .ap{
+            color: black;
+        }</style>
+</head>
+<body>
+    
+    <div class="cont">
+        <div class="calculator">
+            <form >
+                <div class="dis">
+                    <input type="text" name="display">
+                </div>
+                <div>
+                    <input id="a" type="button" value="AC" onclick="display.value =''">
+                    <input id="b" type="button" value="DE" onclick="display.value =display.value.toString().slice(0,-1)">
+                    <input id="c" type="button" value="." onclick="display.value +='.'">
+                    <input id="d" type="button" value="/"onclick="display.value +='/'">
+                </div>
+                <div  >
+                    <input id="e" type="button" value="7" onclick="display.value +='7'">
+                    <input id="f" type="button" value="8"  onclick="display.value +='8'">
+                    <input id="g"type="button" value="9"  onclick="display.value +='9'">
+                    <input id="h"type="button" value="*" onclick="display.value +='*'">
+                </div>
+                <div >
+                    <input id="i"type="button" value="4" onclick="display.value +='4'">
+                    <input id="j"type="button" value="5"  onclick="display.value +='5'">
+                    <input id="k"type="button" value="6" onclick="display.value +='6'">
+                    <input id="l"type="button" value="-" onclick="display.value +='-'">
+                </div>
+                <div >
+                    <input id="m" type="button" value="1" onclick="display.value +='1'">
+                    <input id="n"type="button" value="2" onclick="display.value +='2'">
+                    <input id="o"type="button" value="3" onclick="display.value +='3'">
+                    <input id="p"class="ap"type="button" value="+" onclick="display.value +='+'">
+                </div>
+                <div>
+                    <input id="q"type="button" value="00" onclick="display.value +='00'">
+                    <input id="r"type="button" value="0" onclick="display.value +='0'">
+                    <input id="s"type="button" value="=" onclick="display.value =eval(display.value)">
+                    <input id="t"type="button" value="%" onclick="display.value +='%'">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script >
+        
+let s3=document.getElementById("a");
+let s1=document.getElementById("b");
+let s2=document.getElementById("c");
+let s4=document.getElementById("d");
+let s5=document.getElementById("e");
+let s6=document.getElementById("f");
+let s7=document.getElementById("g");
+let s8=document.getElementById("h");
+let s9=document.getElementById("i");
+let s10=document.getElementById("j");
+let s11=document.getElementById("k");
+let s12=document.getElementById("l");
+let s13=document.getElementById("m");
+let s14=document.getElementById("n");
+let s15=document.getElementById("o");
+let s16=document.getElementById("p");
+let s17=document.getElementById("q");
+let s18=document.getElementById("r");
+let s19=document.getElementById("s");
+let s20=document.getElementById("t");
+
+
+
+s3.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s3.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s3.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s3.addEventListener("mouseleave",function()
+{
+s3.style.backgroundColor= "black";
+s3.style.color =" white";
+})
+
+s1.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s1.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s1.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s1.addEventListener("mouseleave",function()
+{
+s1.style.backgroundColor= "black";
+s1.style.color = "white";
+})
+s2.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s2.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s2.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s2.addEventListener("mouseleave",function()
+{
+s2.style.backgroundColor= "black";
+s2.style.color = "white";
+})
+
+s4.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s4.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s4.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s4.addEventListener("mouseleave",function()
+{
+s4.style.backgroundColor= "black";
+s4.style.color ="white";
+})
+
+s13.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s13.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s13.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s13.addEventListener("mouseleave",function()
+{
+s13.style.backgroundColor= "black";
+s13.style.color = "white";
+
+
+})
+
+s11.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s11.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s11.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s11.addEventListener("mouseleave",function()
+{
+s11.style.backgroundColor= "black";
+s11.style.color =" white";
+})
+
+s5.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s5.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s5.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s5.addEventListener("mouseleave",function()
+{
+s5.style.backgroundColor= "black";
+s5.style.color =" white";
+})
+
+s6.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+s6.style.color = `rgb(${a-50},${b-50},${c-50})`;
+    s6.style.backgroundColor = `rgb(${a},${b},${c})`;
+})
+
+s6.addEventListener("mouseleave",function()
+{
+s6.style.backgroundColor= "black";
+s6.style.color =" white";
+})
+
+s15.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s15.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s15.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s15.addEventListener("mouseleave",function()
+{
+s15.style.backgroundColor= "black";
+s15.style.color =" white";
+})
+
+s16.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s16.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s16.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s16.addEventListener("mouseleave",function()
+{
+s16.style.backgroundColor= "black";
+s16.style.color =" white";
+})
+
+
+s20.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s20.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s20.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s20.addEventListener("mouseleave",function()
+{
+s20.style.backgroundColor= "black";
+s20.style.color =" white";
+})
+
+s19.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s19.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s19.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s19.addEventListener("mouseleave",function()
+{
+s19.style.backgroundColor= "black";
+s19.style.color =" white";
+})
+
+s18.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s18.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s18.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s18.addEventListener("mouseleave",function()
+{
+s18.style.backgroundColor= "black";
+s18.style.color =" white";
+})
+
+s17.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s17.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s17.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s17.addEventListener("mouseleave",function()
+{
+s17.style.backgroundColor= "black";
+s17.style.color =" white";
+})
+
+s7.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s7.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s7.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s7.addEventListener("mouseleave",function()
+{
+s7.style.backgroundColor= "black";
+s7.style.color =" white";
+})
+
+s8.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s8.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s8.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s8.addEventListener("mouseleave",function()
+{
+s8.style.backgroundColor= "black";
+s8.style.color =" white";
+})
+
+s10.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s10.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s10.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s10.addEventListener("mouseleave",function()
+{
+s10.style.backgroundColor= "black";
+s10.style.color =" white";
+})
+
+
+s9.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s9.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s9.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s9.addEventListener("mouseleave",function()
+{
+s9.style.backgroundColor= "black";
+s9.style.color =" white";
+})
+
+s12.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s12.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s12.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s12.addEventListener("mouseleave",function()
+{
+s12.style.backgroundColor= "black";
+s12.style.color =" white";
+})
+s14.addEventListener("mouseenter",function()
+{
+    
+let a= Math.floor(Math.random()*256);
+let b= Math.floor(Math.random()*256);
+let c= Math.floor(Math.random()*256);
+    s14.style.backgroundColor = `rgb(${a},${b},${c})`;
+    s14.style.color = `rgb(${a-50},${b-50},${c-50})`;
+})
+
+s14.addEventListener("mouseleave",function()
+{
+s14.style.backgroundColor= "black";
+s14.style.color =" white";
+})
+
+
+    </script>
+</body>
+</html>
